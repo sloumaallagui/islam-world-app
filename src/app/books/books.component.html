@@ -1,0 +1,72 @@
+<nav class="navbar navbar-expand-sm  navbar-light px-5 clearfix" style="background-color: white; width: 100vw;">
+  <!-- Brand/logo -->
+
+  <!-- Links -->
+  <div class="text-center mx-auto">
+  <ul class="navbar-nav">
+
+
+
+
+   <h3 class="mx-4 ">قراءة وتحميل كتاب اسلامية</h3>
+
+
+    <li class="nav-item mx-1" >
+      <ng-content select=".link2"></ng-content>
+    </li>
+  <!--  <li class="nav-item dropdown mx-3">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Our news
+      </a>
+      <div class="dropdown-menu"  routerLinkActive=active>
+        <a class="dropdown-item" routerLink='news' > href="#">Topics 1</a>
+        <a class="dropdown-item" href="#">Topics 2</a>
+        <a class="dropdown-item" href="#">Topics 3</a>
+      </div>
+    </li> -->
+
+  </ul>
+</div>
+  <ul class=" navbar-nav nav-right" >
+    <div class="btn-group">
+      <i class="fa fa-search mx-5 my-3" aria-hidden="true"></i>
+
+        <a class="navbar-brand" href="#"><img src="/assets/images/islamicWorldTrans.png"alt="" style=" margin-right:40px; width: 100px; height: 55px;"></a>
+
+
+
+    </div>
+  </ul>
+</nav>
+
+<div class="row ml-5"  >
+
+  <div class="card col-3  mx-5 my-3" *ngFor="let item of data">
+    <div class="card-body">
+      <h5 class="card-title">{{item.title}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted" *ngIf="item.prepared_by[0]!=undefined && item.prepared_by[0]!=[]">
+
+        {{item.prepared_by[0].title}}</h6>
+      <p class="card-text">{{item.description}}</p>
+      <span>size : {{item.attachments[0].size}}</span> <br> <br>
+      <a href="{{item.attachments[0].url}}" class=" btn btn-success card-link"> تحميل  الكتب</a>
+      <a  (click)="window.open(item.attachments[0].url,'popup','width=600,height=600'); "  class=" btn btn-success card-link">  افتح الكتاب</a>
+
+
+        <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+
+
+
+
+</div>
+
+  </div>
+<br>
+<br>
+<br>
+</div>
+<br>
+<br> <br> <br>

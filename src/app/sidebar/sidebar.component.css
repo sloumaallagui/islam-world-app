@@ -1,0 +1,23 @@
+#sidebar{
+  transform: translate(0,0%);
+  z-index: 10000;
+  height: 100vh;
+  width: 70px;
+  margin-left: 3px;
+  position: fixed;
+  left: 0;
+  background-color: #04130ce5;
+   border-radius: 5px;
+  box-shadow: 0 0 10px 0 rgba(170, 168, 168, 0.1);
+}
+img:hover{
+  transform: scale(1.1, 1.1);
+  transition: 0.2s;
+  box-shadow: 0 0 10px 0 rgba(199, 195, 195, 0.575);
+
+}
+a:hover{
+  cursor: pointer;
+
+}
+

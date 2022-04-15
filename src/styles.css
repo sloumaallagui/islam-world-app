@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+::-webkit-scrollbar {
+  position: fixed;
+  left: 0;
+  background-color: rgb(19, 19, 19);
+  border-radius: 15px;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,.1);
+  max-height: 50px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #016938;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: grey;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #016938;
+}

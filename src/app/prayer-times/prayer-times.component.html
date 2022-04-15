@@ -1,0 +1,114 @@
+<nav class="navbar navbar-expand-sm  navbar-light px-5 clearfix" style="background-color: white; width: 100vw;">
+  <!-- Brand/logo -->
+
+  <!-- Links -->
+  <div class="text-center mx-auto">
+  <ul class="navbar-nav">
+
+
+
+    <button class="btn mx-1 px-5  bg-success text-light" (click)="fillData('today','tunis')" >
+      اليوم
+    </button>
+    <button class="btn mx-1  px-5 bg-success text-light" (click)="fillDataTomorrow()" >
+      غدا
+    </button>
+    <button class="btn mx-1  px-5 bg-success text-light" (click)="fillDataWeek()" >
+      هذا الاسبوع
+    </button>
+    <div class="input-group mb-0  bg-success text-light  input-group-md">
+      <div class="input-group-prepend">
+        <span class=" btn input-group-text bg-success text-light ">اختر اليوم</span>
+     </div>
+     <input type="date" id="birthday" name="birthday"  [ngModel]="date | date:'yyyy-MM-dd'"
+     (ngModelChange)="date = $event"     (change)="fillDate()">
+   </div>
+   <h3 class="mx-4 ">اوقات&nbsp;الصلاة</h3>
+
+
+    <li class="nav-item mx-1" >
+      <ng-content select=".link2"></ng-content>
+    </li>
+  <!--  <li class="nav-item dropdown mx-3">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Our news
+      </a>
+      <div class="dropdown-menu"  routerLinkActive=active>
+        <a class="dropdown-item" routerLink='news' > href="#">Topics 1</a>
+        <a class="dropdown-item" href="#">Topics 2</a>
+        <a class="dropdown-item" href="#">Topics 3</a>
+      </div>
+    </li> -->
+
+  </ul>
+</div>
+  <ul class=" navbar-nav nav-right" >
+    <div class="btn-group">
+      <i class="fa fa-search mx-5 my-3" aria-hidden="true"></i>
+
+        <a class="navbar-brand" href="#"><img src="/assets/images/islamicWorldTrans.png"alt="" style=" margin-right:40px; width: 100px; height: 55px;"></a>
+
+
+
+    </div>
+  </ul>
+</nav>
+<br> <br>
+
+<div style="text-align: center; margin: 0 100px ;">
+  <table class="table table-striped table-light">
+    <thead>
+      <tr>
+        <th scope="col">الصلات</th>
+        <th scope="col">التوقيت</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+
+        <td>الفجر</td>
+        <td>{{data[0].times.Imsak}}</td>
+      </tr>
+      <tr>
+
+        <td>الامساك</td>
+        <td>{{data[0].times.Imsak}}</td>
+      </tr>
+      <tr>
+        <td>شروق الشمس</td>
+        <td>{{data[0].times.Sunrise}}</td>
+      </tr>
+      <tr>
+        <td>الظهر</td>
+        <td>{{data[0].times.Dhuhr}}</td>
+      </tr>
+      <tr>
+        <td>العصر</td>
+        <td>{{data[0].times.Asr}}</td>
+      </tr>
+      <tr>
+        <td>المغرب</td>
+        <td>{{data[0].times.Maghrib}}</td>
+      </tr>
+      <tr>
+        <td>العشاء        </td>
+        <td>{{data[0].times.Isha}}</td>
+      </tr>
+      <tr>
+        <td>قيام الليل</td>
+        <td>{{data[0].times.Midnight}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="btn btn-success" (click)="logData()">نسخ الصفحة</button>
+
+
+</div>
+
+
+
+
+
+
+

@@ -1,0 +1,15 @@
+a:hover{
+  cursor: pointer;
+}
+.active {
+  font-weight: bold;
+  }
+@import "~bootstrap/dist/css/bootstrap.min.css";
+.navbar
+{
+  position: sticky;
+  top:0;
+  z-index: 1000;
+  border-bottom: 0.000001px rgba(128, 128, 128, 0.171) solid;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
