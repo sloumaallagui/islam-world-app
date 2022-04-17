@@ -26,3 +26,25 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #016938;
 }
+
+  .navbar-brand{
+    position: absolute; right:15px; top:30px; z-index:100;
+  }
+  nav{
+  width: 60vw;
+  margin: auto;
+}
+  @media (max-width: 600px) {
+    .navbar-brand{
+      right:3px;
+    }
+    .navbar{
+      margin-left: 5px !important;
+    }
+    #qibla{
+      margin-left: 70px !important;
+      width:77vw !important;
+      height: 80vh;
+    }
+  }
+

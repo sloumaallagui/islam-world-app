@@ -3,10 +3,12 @@
   z-index: 10000;
   height: 100vh;
   width: 70px;
+  padding-top: 10vh;
   margin-left: 3px;
   position: fixed;
   left: 0;
-  background-color: #04130ce5;
+
+  background-color: #04130cfb;
    border-radius: 5px;
   box-shadow: 0 0 10px 0 rgba(170, 168, 168, 0.1);
 }

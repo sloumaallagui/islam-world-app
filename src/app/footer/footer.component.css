@@ -1,16 +1,27 @@
 #center
 {
   text-align:  center;
-  padding: 15px;
+
 }
 footer{
-  min-height: 30px;
+  text-align: center;
+  min-height: 10px;
+  height: 80px;
   border-top: 0.1px solid #01693977 ;
   border-top: 0.000001px rgba(128, 128, 128, 0.171) solid;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   position: fixed;
-  bottom: 0;
+  bottom: 0px;
   width: 100vw;
   z-index: 100;
   background-color: white;
+}
+@media (max-width: 600px) {
+footer,#center{
+  padding-top: 2px;
+  height:120px;
+  width:90vw;
+  margin:0;
+  padding:5 5px !important;
+}
 }
