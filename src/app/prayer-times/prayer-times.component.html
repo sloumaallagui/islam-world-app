@@ -20,7 +20,7 @@
       <div class="input-group-prepend">
         <span class=" btn input-group-text bg-success text-light ">اختر اليوم</span>
      </div>
-     <input type="date" id="birthday" name="birthday"  [ngModel]="date | date:'yyyy-MM-dd'"
+     <input type="date" id="birthday" name="birthday"  [ngModel]="date | filter:'yyyy-MM-dd'"
      (ngModelChange)="date = $event"     (change)="fillDate()">
    </div>
    <h3 class="mx-4 ">اوقات&nbsp;الصلاة</h3>

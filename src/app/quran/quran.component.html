@@ -1,0 +1,84 @@
+<nav class="navbar navbar-expand-sm  navbar-light px-5 clearfix" style="background-color: white; width: 100vw;">
+  <!-- Brand/logo -->
+
+  <!-- Links -->
+  <div class="text-center mx-auto">
+  <ul class="navbar-nav">
+   <div class="col-12 mx-5">
+    <h3>   قراءة وتحميل القران الكريم </h3>
+    <input class="form-control" type="text" name="search" id="" [(ngModel)]="search" placeholder="&#61442;  ابحث عن السوره">
+    <button class="btn btn-dark mx-1" >الكل </button> <br> <br>
+
+  </div>
+
+
+  </ul>
+</div>
+  <ul class=" navbar-nav nav-right" >
+    <div class="btn-group">
+      <i class="fa fa-search mx-5 my-3" aria-hidden="true"></i>
+
+        <a class="navbar-brand" href="#"><img src="/assets/images/islamicWorldTrans.png"alt="" style=" margin-right:40px; width: 100px; height: 55px;"></a>
+
+
+
+    </div>
+  </ul>
+</nav>
+
+
+
+
+
+<div style="margin:auto; margin-bottom: 300px;" class="row mx-5 " >
+
+
+
+<div class="card col-3 mx-5 my-2 p-3" *ngFor="let item of data   | filter: search ; index as i" style="text-align: right;" >
+  <div class="card-block">
+    <h4 class="card-title">{{ item.name.long || item.name.short }} </h4>
+    <h6 class="card-subtitle text-muted">{{item.name.transliteration.en}}</h6>
+    <p class="card-text p-y-1">  مكان نزول الوحي : {{ item.revelation.arab }} </p>
+
+
+
+    <ng-container *ngIf="(i+1)<10; then thenTemplate1; else elseTemplate1"></ng-container>
+      <ng-template #thenTemplate1>
+        <a class="btn btn-success mx-2" href="https://download.quranicaudio.com/quran/abdul_basit_murattal/00{{i+1}}.mp3"> MP3 تحميل</a>
+      </ng-template>
+      <ng-template #elseTemplate1>
+        <ng-container *ngIf="(i+1)<100; else other1">
+          <a class="btn btn-success mx-2" href="https://download.quranicaudio.com/quran/abdul_basit_murattal/0{{i+1}}.mp3"> MP3 تحميل</a>
+        </ng-container>
+        <ng-template #other1>
+          <a class="btn btn-success mx-2" href="https://download.quranicaudio.com/quran/abdul_basit_murattal/{{i+1}}.mp3"> MP3 تحميل</a>
+        </ng-template>
+
+      </ng-template>
+
+    <a class="btn btn-success mx-2" href="https://suratmp3.com/pics/pdf-v3/{{i+1}}.pdf"> PDF تحميل</a>
+    <br>
+    <audio controls preload="none" class="mx-auto mt-3 p-1" style="width: 99%; background-color: #157347; ">
+      <source [src]=" " type="audio/ogg">
+     <ng-container *ngIf="(i+1)<10; then thenTemplate; else elseTemplate"></ng-container>
+      <ng-template #thenTemplate>
+        <source src="https://download.quranicaudio.com/quran/abdul_basit_murattal/00{{i+1}}.mp3" type="audio/mpeg">
+      </ng-template>
+      <ng-template #elseTemplate>
+        <ng-container *ngIf="(i+1)<100; else other">
+          <source src="https://download.quranicaudio.com/quran/abdul_basit_murattal/0{{i+1}}.mp3" type="audio/mpeg">
+        </ng-container>
+        <ng-template #other>
+          <source src="https://download.quranicaudio.com/quran/abdul_basit_murattal/{{i+1}}.mp3" type="audio/mpeg">
+        </ng-template>
+
+      </ng-template>
+
+
+      No audio support.
+      </audio>
+  </div>
+</div>
+
+</div>
+

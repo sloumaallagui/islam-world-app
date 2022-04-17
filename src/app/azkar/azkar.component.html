@@ -1,10 +1,75 @@
-<div style="margin:auto">
-  hello this azkar
+<nav class="navbar navbar-expand-sm  navbar-light px-5 clearfix" style="background-color: white; width: 100vw;">
+  <!-- Brand/logo -->
 
-<div *ngFor="let item of data">
-  <h1>category : {{item.category}}</h1>
-  <p> description :{{item.description}}</p>
-  <h6> ref :{{item.reference}}</h6>
+  <!-- Links -->
+  <div class="text-center mx-auto">
+  <ul class="navbar-nav">
+
+
+
+
+
+
+
+   <div class="col-12 mx-5">
+
+    <h3>اذكار و ادعية</h3>
+
+
+
+    <button class="btn btn-success mx-1"  (click)="getAzkarByCategorie('http://www.hisnmuslim.com/api/ar/16.json')">  دعاء الاستفتاح</button>
+    <button class="btn btn-success mx-1"  (click)="getAzkarByCategorie('http://www.hisnmuslim.com/api/ar/18.json')">  دعاء الرفع من الركوع</button>
+
+    <button class="btn btn-success mx-1" (click)="getAzkarByCategorie('http://www.hisnmuslim.com/api/ar/28.json')"> أذكار النوم</button>
+
+    <button class="btn btn-success mx-1" (click)="getAzkarByCategorie('http://www.hisnmuslim.com/api/ar/6.json')">دعاء الخلاء</button>
+    <button class="btn  mx-1" style="background-color: #18fdb1;" (click)="getAzkarByCategorie('http://www.hisnmuslim.com/api/ar/27.json')"> أذكار_الصباح_والمساء</button>
+    <button class="btn btn-dark mx-1" (click)="getAzkar()">الكل </button> <br> <br>
+    <button class="btn btn-success mx-1"  (click)="getAzkarByCategorie('http://www.hisnmuslim.com/api/ar/10.json')"> دعاء المنزل</button>
+    <button class="btn btn-success mx-1"  (click)="getAzkarByCategorie('http://www.hisnmuslim.com/api/ar/9.json')"> الوضوء </button>
+    <button class="btn btn-success mx-1"  (click)="getAzkarByCategorie('http://www.hisnmuslim.com/api/ar/19.json')">  دعاء السجود</button>
+    <button class="btn btn-success mx-1"  (click)="getAzkarByCategorie('http://www.hisnmuslim.com/api/ar/63.json')">  من أدعية الاستسقاء</button>
+    <button class="btn btn-success mx-1"  (click)="getAzkarByCategorie('http://www.hisnmuslim.com/api/ar/25.json')"> الأذكار بعد السلام من الصلاة</button>
+    <button class="btn btn-success mx-1"  (click)="getAzkarByCategorie('http://www.hisnmuslim.com/api/ar/55.json')"> الدعاء للميت في الصلاة عليه </button>
+  </div>
+
+
+  </ul>
+</div>
+  <ul class=" navbar-nav nav-right" >
+    <div class="btn-group">
+      <i class="fa fa-search mx-5 my-3" aria-hidden="true"></i>
+
+        <a class="navbar-brand" href="#"><img src="/assets/images/islamicWorldTrans.png"alt="" style=" margin-right:40px; width: 100px; height: 55px;"></a>
+
+
+
+    </div>
+  </ul>
+</nav>
+
+
+
+
+
+<div style="margin:auto" class="row mx-5 ">
+
+
+
+
+<div class="card col-3 mx-5 my-2 p-3" *ngFor="let item of data" style="text-align: right;">
+  <div class="card-block">
+    <h4 class="card-title text-right">{{ item.TITLE || item.ARABIC_TEXT }} </h4>
+    <h6 class="card-subtitle text-muted text-right">{{item.CATEGORY}}</h6>
+    <p class="card-text p-y-1"></p>
+
+    <a href="#" class="card-link"></a> <br>
+    <audio controls preload="none" class="mx-auto mt-3 p-1 text-right" style="width: 99%; background-color: #157347; ">
+      <source [src]="item.AUDIO_URL || item.AUDIO " type="audio/ogg">
+      <source [src]="item.AUDIO_URL || item.AUDIO " type="audio/mpeg">
+      No audio support.
+      </audio>
+  </div>
 </div>
 
 </div>

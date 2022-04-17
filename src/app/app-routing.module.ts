@@ -8,6 +8,7 @@ import { MainComponent } from './main/main.component';
 import { NewsSectionComponent } from './news-section/news-section.component';
 import { PrayerTimesComponent } from './prayer-times/prayer-times.component';
 import { QiblahComponent } from './qiblah/qiblah.component';
+import { QuranComponent } from './quran/quran.component';
 
 
 const routes: Routes = [
@@ -18,10 +19,12 @@ const routes: Routes = [
   {path:'qiblah',component:QiblahComponent},
   {path:'books',component:BooksComponent},
   {path:'azkar',component:AzkarComponent},
+  {path:'quran',component:QuranComponent},
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
+
 
 exports: [RouterModule]
 })

@@ -8,7 +8,7 @@
 
 
 
-   <h3 class="mx-4 ">قراءة وتحميل كتاب اسلامية</h3>
+   <h3 class="mx-4 text-right">قراءة وتحميل كتاب اسلامية</h3>
 
 
     <li class="nav-item mx-1" >
@@ -43,14 +43,14 @@
 
   <div class="card col-3  mx-5 my-3" *ngFor="let item of data">
     <div class="card-body">
-      <h5 class="card-title">{{item.title}}</h5>
-      <h6 class="card-subtitle mb-2 text-muted" *ngIf="item.prepared_by[0]!=undefined && item.prepared_by[0]!=[]">
+      <h5 class="card-title text-right">{{item.title}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted text-right" *ngIf="item.prepared_by[0]!=undefined && item.prepared_by[0]!=[]">
 
         {{item.prepared_by[0].title}}</h6>
-      <p class="card-text">{{item.description}}</p>
+      <p class="card-text text-right">{{item.description}}</p>
       <span>size : {{item.attachments[0].size}}</span> <br> <br>
-      <a href="{{item.attachments[0].url}}" class=" btn btn-success card-link"> تحميل  الكتب</a>
-      <a  (click)="window.open(item.attachments[0].url,'popup','width=600,height=600'); "  class=" btn btn-success card-link">  افتح الكتاب</a>
+      <a href="{{item.attachments[0].url}}" class=" btn btn-success card-link text-right"> تحميل  الكتب</a>
+      <a  (click)="window.open(item.attachments[0].url,'popup','width=600,height=600'); "  class=" btn btn-success card-link text-right">  افتح الكتاب</a>
 
 
         <!-- Button trigger modal -->

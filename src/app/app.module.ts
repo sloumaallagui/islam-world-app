@@ -19,6 +19,10 @@ import { QiblahComponent } from './qiblah/qiblah.component';
 import { BooksComponent } from './books/books.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { AzkarComponent } from './azkar/azkar.component';
+import { ZekerComponent } from './zeker/zeker.component';
+import { QuranComponent } from './quran/quran.component';
+import {  Ng2SearchPipeModule } from 'ng2-search-filter';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -32,16 +36,22 @@ import { AzkarComponent } from './azkar/azkar.component';
     PrayerTimesComponent,
     QiblahComponent,
     BooksComponent,
-    AzkarComponent
+    AzkarComponent,
+    ZekerComponent,
+    QuranComponent,
+    NavbarComponent
   ],
   imports: [
+    CommonModule,
+    Ng2SearchPipeModule,
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-     PdfViewerModule
+     PdfViewerModule,
+
   ],
   providers: [CookieService,{ provide: Window, useValue: window }],
   bootstrap: [BodyComponent]
